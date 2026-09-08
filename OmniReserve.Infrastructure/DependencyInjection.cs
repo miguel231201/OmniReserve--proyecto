@@ -7,7 +7,6 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        // Aquí se registrarán los servicios de la capa de Infraestructura
         return services;
     }
 }
