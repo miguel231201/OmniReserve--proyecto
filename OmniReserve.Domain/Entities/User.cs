@@ -11,16 +11,12 @@ public class User
     public string PasswordHash { get; private set; }
     public Role Role { get; private set; }
 
-    public Prodruc(string FirstName, string LastName, string Email, string PasswordHash, Role role)
+    public User(string firstName, string lastName, string email, string passwordHash, Role role)
     {
-        if (string.IsNullOrWhiteSpace(firstName))
-            throw new ArgumentNullException(nameof(firstName), "El nombre no puede estar vacío.");
-        if (string.IsNullOrWhiteSpace(LastNameName))
-            throw new ArgumentNullException(nameof(firstName), "El segundo nombre no puede estar vacío.");
-        if (string.IsNullOrWhiteSpace(Email))
-            throw new ArgumentNullException(nameof(firstName), "El Email no puede estar vacío.");
-        if (string.IsNullOrWhiteSpace(PasswordHash))
-            throw new ArgumentNullException(nameof(firstName), "El Password no puede estar vacío.");
+        if (string.IsNullOrWhiteSpace(firstName)) throw new ArgumentNullException(nameof(firstName));
+        if (string.IsNullOrWhiteSpace(lastName)) throw new ArgumentNullException(nameof(lastName));
+        if (string.IsNullOrWhiteSpace(email)) throw new ArgumentNullException(nameof(email));
+        if (string.IsNullOrWhiteSpace(passwordHash)) throw new ArgumentNullException(nameof(passwordHash));
 
         Id = Guid.NewGuid();
         FirstName = firstName;

@@ -1,6 +1,6 @@
 using OmniReserve.Domain.Enums;
 
-namespace OmniReserve.Domain.Entities; 
+namespace OmniReserve.Domain.Entities;
 
 public class Room
 {
@@ -12,8 +12,6 @@ public class Room
 
     public Room(string roomNumber, RoomType type, decimal pricePerNight)
     {
-        if (string.IsNullOrWhiteSpace(roomNumber)) throw new ArgumentNullException(nameof(roomNumber), "El número de habitación no puede ser nulo ni estar vacío..");
-
         Id = Guid.NewGuid();
         RoomNumber = roomNumber;
         Type = type;

@@ -1,3 +1,7 @@
+using OmniReserve.Application;
+using OmniReserve.Infrastructure;
+using OmniReserve.Domain.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

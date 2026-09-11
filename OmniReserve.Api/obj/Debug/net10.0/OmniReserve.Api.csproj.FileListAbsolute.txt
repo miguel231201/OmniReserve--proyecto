@@ -41,3 +41,9 @@ C:\Users\Miguel23\Desktop\aplicaciones de base de datos\OmniReserve\OmniReserve.
 C:\Users\Miguel23\Desktop\aplicaciones de base de datos\OmniReserve\OmniReserve.Api\obj\Debug\net10.0\OmniReserve.Api.pdb
 C:\Users\Miguel23\Desktop\aplicaciones de base de datos\OmniReserve\OmniReserve.Api\obj\Debug\net10.0\OmniReserve.Api.genruntimeconfig.cache
 C:\Users\Miguel23\Desktop\aplicaciones de base de datos\OmniReserve\OmniReserve.Api\obj\Debug\net10.0\ref\OmniReserve.Api.dll
+C:\Users\Miguel23\Desktop\aplicaciones de base de datos\OmniReserve\OmniReserve.Api\bin\Debug\net10.0\MediatR.dll
+C:\Users\Miguel23\Desktop\aplicaciones de base de datos\OmniReserve\OmniReserve.Api\bin\Debug\net10.0\MediatR.Contracts.dll
+C:\Users\Miguel23\Desktop\aplicaciones de base de datos\OmniReserve\OmniReserve.Api\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Miguel23\Desktop\aplicaciones de base de datos\OmniReserve\OmniReserve.Api\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Miguel23\Desktop\aplicaciones de base de datos\OmniReserve\OmniReserve.Api\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Miguel23\Desktop\aplicaciones de base de datos\OmniReserve\OmniReserve.Api\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll

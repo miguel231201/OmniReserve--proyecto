@@ -1,4 +1,4 @@
-using OmnoReserve.Domain.Exceptions;
+using OmniReserve.Domain.Exceptions;
 
 namespace OmniReserve.Domain.Exceptions;
 
