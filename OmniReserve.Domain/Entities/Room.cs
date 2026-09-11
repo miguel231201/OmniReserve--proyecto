@@ -1,34 +1,33 @@
 using OmniReserve.Domain.Enums;
 
-namespace OmniReserve.Domain.Entities
+namespace OmniReserve.Domain.Entities; 
+
+public class Room
 {
-    public class Room
+    public Guid Id { get; private set; }
+    public string RoomNumber { get; private set; }
+    public RoomType Type { get; private set; }
+    public decimal PricePerNight { get; private set; }
+    public bool IsAvailable { get; private set; }
+
+    public Room(string roomNumber, RoomType type, decimal pricePerNight)
     {
-        public Guid Id { get; private set; }
-        public string RoomNumber { get; private set; }
-        public RoomType Type { get; private set; }
-        public decimal PricePerNight { get; private set; }
-        public bool IsAvailable { get; private set; }
+        if (string.IsNullOrWhiteSpace(roomNumber)) throw new ArgumentNullException(nameof(roomNumber), "El número de habitación no puede ser nulo ni estar vacío..");
 
-        public Room(string roomNumber, RoomType type, decimal pricePerNight)
-        {
-            if (string.IsNullOrWhiteSpace(roomNumber)) throw new ArgumentNullException(nameof(roomNumber), "El número de habitación no puede ser nulo ni estar vacío..");
+        Id = Guid.NewGuid();
+        RoomNumber = roomNumber;
+        Type = type;
+        PricePerNight = pricePerNight;
+        IsAvailable = true;
+    }
 
-            Id = Guid.NewGuid();
-            RoomNumber = roomNumber;
-            Type = type;
-            PricePerNight = pricePerNight;
-            IsAvailable = true;
-        }
+    public void MarkAsUnavailable()
+    {
+        IsAvailable = false;
+    }
 
-        public void MarkAsUnavailable()
-        {
-            IsAvailable = false;
-        }
-
-        public void MarkAsAvailable()
-        {
-            IsAvailable = true;
-        }
+    public void MarkAsAvailable()
+    {
+        IsAvailable = true;
     }
 }
