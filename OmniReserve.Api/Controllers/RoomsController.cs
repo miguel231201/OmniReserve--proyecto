@@ -19,7 +19,17 @@ public class RoomsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateRoom([FromBody] CreateRoomCommand command)
     {
-        var resultado = await _sender.Send(command);
-        return Ok(resultado);
+        var roomId = await _sender.Send(command);
+        return Ok(roomId);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetRoom(Guid id)
+    {
+        var query = new GetRoomByIdQuery { RoomId = id };
+
+        var result = await _sender.Send(query);
+
+        return Ok(result);
     }
 }
