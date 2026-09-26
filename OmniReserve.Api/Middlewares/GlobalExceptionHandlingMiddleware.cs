@@ -65,7 +65,7 @@ public class GlobalExceptionHandlingMiddleware
             context.Response.StatusCode = StatusCodes.Status400BadRequest;
 
             await context.Response.WriteAsync(JsonSerializer.Serialize(domainProblem));
-            return;
+            return; 
         }
 
         // 2. Manejo Genérico: Errores Graves / No controlados
