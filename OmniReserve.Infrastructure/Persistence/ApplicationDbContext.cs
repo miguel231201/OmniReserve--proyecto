@@ -11,7 +11,10 @@ public class ApplicationDbContext : DbContext
     {
     }
 
+
+    public DbSet<User> Users { get; set; } = null!;
     public DbSet<Room> Rooms { get; set; } = null!;
+    public DbSet<Reservation> Reservations { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
