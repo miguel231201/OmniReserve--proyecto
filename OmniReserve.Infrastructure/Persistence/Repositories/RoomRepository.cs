@@ -25,12 +25,19 @@ public class RoomRepository : IRoomRepository
     public async Task<Room?> GetByIdAsync(Guid id)
     {
         // Se conecta a PostgreSQL para obtener o retornar nulo
-        return await _context.Rooms.FirstOrDefaultAsync(r => r.Id == id);
+        return await _context.Rooms
+            .FirstOrDefaultAsync(r => r.Id == id);
     }
     public async Task<Room?> SearchByNumberAsync(string roomNumber)
     {
         // Solución Segura: EF Core extrae 'roomNumber' y lo parametriza automáticamente (@p0)
         return await _context.Rooms
             .FirstOrDefaultAsync(r => r.RoomNumber == roomNumber);
+    }
+    public async Task<List<Room>> GetRoomsByTypeRawAsync(string roomType)
+    {
+        return await _context.Rooms
+            .FromSql($"SELECT * FROM \"Rooms\" WHERE \"Type\" = {roomType}")
+            .ToListAsync();
     }
 }
