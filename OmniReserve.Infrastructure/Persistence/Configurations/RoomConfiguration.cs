@@ -8,23 +8,25 @@ public class RoomConfiguration : IEntityTypeConfiguration<Room>
 {
     public void Configure(EntityTypeBuilder<Room> builder)
     {
-        // 1. Nombre de la tabla
+        // Nombre explícito de la tabla
         builder.ToTable("Rooms");
 
-        // 2. Llave primaria
+        // Identificador primario
         builder.HasKey(r => r.Id);
 
-        // 3. RoomNumber requerido con longitud máxima de 10
+        // Limitar el tamaño del número de habitación
         builder.Property(r => r.RoomNumber)
             .IsRequired()
             .HasMaxLength(10);
 
-        // 4. PricePerNight con precisión (18, 2)
+        // Precisión para decimales financieros
         builder.Property(r => r.PricePerNight)
+            .IsRequired()
             .HasPrecision(18, 2);
 
-        // 5. Convertir Enum a String para la base de datos
+        // Conversión del Enum a Texto plano en la base de datos
         builder.Property(r => r.Type)
+            .IsRequired()
             .HasConversion<string>();
     }
 }

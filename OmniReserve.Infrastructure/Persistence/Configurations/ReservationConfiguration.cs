@@ -1,6 +1,6 @@
-using OmniReserve.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using OmniReserve.Domain.Entities;
 
 namespace OmniReserve.Infrastructure.Persistence.Configurations;
 
@@ -8,10 +8,8 @@ public class ReservationConfiguration : IEntityTypeConfiguration<Reservation>
 {
     public void Configure(EntityTypeBuilder<Reservation> builder)
     {
-        // 1. Nombre de la tabla
         builder.ToTable("Reservations");
 
-        // 2. Llave primaria
         builder.HasKey(r => r.Id);
 
         builder.Property(r => r.RoomId)
@@ -20,10 +18,10 @@ public class ReservationConfiguration : IEntityTypeConfiguration<Reservation>
         builder.Property(r => r.UserId)
             .IsRequired();
 
-        builder.Property(r => r.StartDate)
+        builder.Property(r => r.CheckInDate)
             .IsRequired();
 
-        builder.Property(r => r.EndDate)
+        builder.Property(r => r.CheckOutDate)
             .IsRequired();
     }
 }

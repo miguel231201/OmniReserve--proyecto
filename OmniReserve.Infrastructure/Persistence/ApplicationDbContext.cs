@@ -11,16 +11,16 @@ public class ApplicationDbContext : DbContext
     {
     }
 
+    public DbSet<Room> Rooms { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<Reservation> Reservations { get; set; }
 
-    public DbSet<User> Users { get; set; } = null!;
-    public DbSet<Room> Rooms { get; set; } = null!;
-    public DbSet<Reservation> Reservations { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
-
-        // Aplica automáticamente todas las configuraciones que implementen IEntityTypeConfiguration en este proyecto
+        // Aplica mágicamente la clase RoomConfiguration sin tener que instanciarla
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+        base.OnModelCreating(modelBuilder);
     }
 }

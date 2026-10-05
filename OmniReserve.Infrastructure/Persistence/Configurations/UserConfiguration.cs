@@ -1,6 +1,6 @@
-using OmniReserve.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using OmniReserve.Domain.Entities;
 
 namespace OmniReserve.Infrastructure.Persistence.Configurations;
 
@@ -8,19 +8,19 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
-        // 1. Nombre de la tabla
         builder.ToTable("Users");
 
-        // 2. Llave primaria
         builder.HasKey(u => u.Id);
 
-        // 4. Email requerido con longitud máxima de 100
         builder.Property(u => u.Email)
             .IsRequired()
             .HasMaxLength(100);
 
-        // 5. Password requerido con longitud máxima de 255
-        builder.Property(u => u.FullName)
+        builder.Property(u => u.FirstName)
+            .IsRequired()
+            .HasMaxLength(150);
+
+        builder.Property(u => u.LastName)
             .IsRequired()
             .HasMaxLength(150);
     }
